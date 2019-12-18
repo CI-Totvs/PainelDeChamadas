@@ -1,16 +1,14 @@
 ﻿"use strict";
 
-var connection = new signalR.HubConnectionBuilder().withUrl("/callHub").build();
+var connection = new signalR.HubConnectionBuilder().withUrl("/callHub").withAutomaticReconnect().configureLogging(signalR.LogLevel.Information).build();
 
 //Disable send button until connection is established
 document.getElementById("sendButton").disabled = true;
 
 connection.on("ReceiveMessage", function (user, message) {
     var msg = message.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-    var encodedMsg = user + " says " + msg;
-    var li = document.createElement("li");
-    li.textContent = encodedMsg;
-    document.getElementById("messagesList").appendChild(li);
+    document.getElementById("pacient").innerHTML  = user;
+    document.getElementById("place").innerHTML  = msg;
 });
 
 connection.start().then(function () {
@@ -20,10 +18,15 @@ connection.start().then(function () {
 });
 
 document.getElementById("sendButton").addEventListener("click", function (event) {
-    var user = document.getElementById("userInput").value;
-    var message = document.getElementById("messageInput").value;
+    var user = pacientes[index];
+    var message = lugar[index];
+    index++;
     connection.invoke("Call", user, message).catch(function (err) {
         return console.error(err.toString());
     });
     event.preventDefault();
 });
+var index = 0;
+var pacientes = ["conrado0", "conrado1", "conrado2", "conrado3", "conrado4", "conrado5", "conrado6", "conrado7"];
+var lugar = ["Sala0", "Sala1", "Sala2", "Sala3", "Sala4", "Sala5", "Sala6", "Sala7"];
+

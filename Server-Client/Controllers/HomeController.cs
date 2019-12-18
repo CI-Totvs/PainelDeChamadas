@@ -15,16 +15,20 @@ namespace Server_Client.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IHubContext<CallHub> _hubContext;
-
+            
         public HomeController(IHubContext<CallHub> hubContext)
         {
             _hubContext = hubContext;
         }
-
-        public async Task<IActionResult> Index()
-        {
-            await _hubContext.Clients.All.SendAsync("ReceiveMessage", "Conrado", "EntrouPelaController");
+        public IActionResult Index()
+        {           
             return View();
+        }
+        [HttpGet]
+        [Route("Call")]
+        public async void Call(string nome, string lugar)
+        {
+            await _hubContext.Clients.All.SendAsync("ReceiveMessage", nome, lugar);          
         }
 
        

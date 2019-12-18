@@ -1,19 +1,20 @@
 ﻿@page
 <div class="container">
     <div class="row">&nbsp;</div>
-    <div class="row">
+    @*<div class="row">
         <div class="col-2">User</div>
         <div class="col-4"><input type="text" id="userInput" /></div>
     </div>
     <div class="row">
         <div class="col-2">Message</div>
         <div class="col-4"><input type="text" id="messageInput" /></div>
-    </div>
+    </div>*@
     <div class="row">&nbsp;</div>
     <div class="row">
         <div class="col-6">
-            <input type="button" id="sendButton" value="Send Message" />
+            <input type="button" id="sendButton" value="Call Pacient" />
         </div>
+       
     </div>
 </div>
 <div class="row">
@@ -22,9 +23,11 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-6">
-        <ul id="messagesList"></ul>
+    <div class="text-center">
+        <h1 id="pacient" type="text" value="Ngm"></h1>
+        <h1 id="place" type="text" value="Ngm"></h1>
     </div>
 </div>
 <script src="~/js/signalr/dist/browser/signalr.js"></script>
 <script src="~/js/call.js"></script>
+<script src="~/js/site.js"></script>

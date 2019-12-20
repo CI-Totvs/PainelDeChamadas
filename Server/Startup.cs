@@ -31,7 +31,7 @@ namespace Server
                    builder.AllowAnyMethod()
                           .AllowAnyHeader()
                           .AllowAnyOrigin()
-                          .WithOrigins("http://localhost:44300")
+                          .WithOrigins("https://localhost:44300")
                           .AllowCredentials();
                }));
 

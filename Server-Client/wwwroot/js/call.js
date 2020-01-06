@@ -35,7 +35,7 @@ var lugar = ["Sala da Emergencia", "Sala1", "Sala2", "Sala3", "Sala4", "Sala5", 
 function say(m) {
     var msg = new SpeechSynthesisUtterance();
     var voices = window.speechSynthesis.getVoices();
-    msg.voice = voices[10];
+    //msg.voice = voices[10];
     msg.voiceURI = "Google português do Brasil";
     msg.volume = 1;
     msg.rate = 1;

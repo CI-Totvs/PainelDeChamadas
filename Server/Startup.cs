@@ -32,6 +32,7 @@ namespace Server
                           .AllowAnyHeader()
                           .AllowAnyOrigin()
                           .WithOrigins("https://localhost:44300")
+                          .WithOrigins("https://localhost:44322")
                           .AllowCredentials();
                }));
 

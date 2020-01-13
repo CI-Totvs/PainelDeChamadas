@@ -6,7 +6,7 @@ document.getElementById("sendButton").disabled = true;
 
 connection.on("ReceiveMessage", function (user, message) {
     var msg = message.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-    var text = user + " " + msg;
+    var text = user + " move to " + msg;
     document.getElementById("pacient").innerHTML = user;
     document.getElementById("place").innerHTML = msg;
     say(text);
@@ -32,6 +32,7 @@ connection.start().then(function () {
 var index = 0;
 var pacientes = ["conrado0", "conrado1", "conrado2", "conrado3", "conrado4", "conrado5", "conrado6", "conrado7"];
 var lugar = ["Sala0", "Sala1", "Sala2", "Sala3", "Sala4", "Sala5", "Sala6", "Sala7"];
+
 function say(m) {
     var msg = new SpeechSynthesisUtterance();
     var voices = window.speechSynthesis.getVoices();

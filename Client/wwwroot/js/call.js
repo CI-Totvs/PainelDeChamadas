@@ -30,13 +30,13 @@ connection.start().then(function () {
 
 //testes 
 var index = 0;
-var pacientes = ["conrado0", "conrado1", "conrado2", "conrado3", "conrado4", "conrado5", "conrado6", "conrado7"];
+var pacientes = ["conrado", "conrado", "conrado", "Bruno Conrado", "conrad4", "conrado", "conrado", "conrado"];
 var lugar = ["Sala0", "Sala1", "Sala2", "Sala3", "Sala4", "Sala5", "Sala6", "Sala7"];
 
 function say(m) {
     var msg = new SpeechSynthesisUtterance();
     var voices = window.speechSynthesis.getVoices();
-    msg.voice = voices[10];
+    //msg.voice = voices[15];
     msg.voiceURI = "Google português do Brasil";
     msg.volume = 1;
     msg.rate = 1;

@@ -37,10 +37,17 @@ var index = 0;
 var pacientes = ["conrado0", "conrado1", "conrado2", "conrado3", "conrado4", "conrado5", "conrado6", "conrado7"];
 var lugar = ["Sala0", "Sala1", "Sala2", "Sala3", "Sala4", "Sala5", "Sala6", "Sala7"];
 
+
 function say(m) {
-    var u = new SpeechSynthesisUtterance();
-    u.text = m;
-    u.lang = 'en-US';
-    u.rate = 1.2;
-    speechSynthesis.speak(u);
+    var msg = new SpeechSynthesisUtterance();
+    var voices = window.speechSynthesis.getVoices();
+    msg.voice = voices[0];
+    //msg.voiceURI = "Google português do Brasil";
+    msg.volume = 1;
+    msg.rate = 1;
+    msg.pitch = 1;
+    msg.text = m;
+    //msg.lang = "pt-BR";
+    //msg.localService = true;
+    speechSynthesis.speak(msg);
 }

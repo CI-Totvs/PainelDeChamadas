@@ -1,5 +1,5 @@
 {
-  "name": "front-painel",
+  "name": "front-end",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -19,6 +19,7 @@
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
+    "@aspnet/signalr": "^1.1.4",
     "@portinari/portinari-ui": "^1.22.2",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
